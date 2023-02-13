@@ -15,8 +15,9 @@ while True:
                 break
             else:
                 to_celsius = str("%.2f" % (float(msg["val"]) - 273.15))
-                print(to_celsius)
+                print("Conversion request received...")
                 receiverSocket.send(bytes(to_celsius, "utf-8"))
+                print("Conversion processed.")
                 receiverSocket.close()
     except:
         print("Connection from {} closed.".format(address))
